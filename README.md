@@ -15,8 +15,35 @@ Handle arbitrary input order (e.g., second‑order, third‑order) and output or
 ## Dependencies
 1. Python 3.x
 
-2. sympy (tested with version 1.10+)
+2. sympy
 
-3. itertools (standard library)
+3. itertools
 
 Install sympy via pip if needed: **pip install sympy**
+
+## Usage
+
+### Example
+
+For a 3m crystal, the symmetry elements are a 3‑fold rotation about z and three mirror planes. The code below computes the reduced $\chi$ tensor for second‑order input (order_input=2) and first‑order output (order_output=1).
+
+```
+# C3 rotation axis z, angle 2π/3
+axis1 = sp.Matrix([0, 0, 1])
+theta1 = 2 * sp.pi / 3
+r1 = H_Rotation(order_input, order_output, axis1, theta1, Rotation_Inversion=False)
+
+# Mirror planes (normals in the xy‑plane)
+axis2 = sp.Matrix([1, sp.sqrt(3), 0])
+axis3 = sp.Matrix([1, -sp.sqrt(3), 0])
+axis4 = sp.Matrix([1, 0, 0])
+
+m1 = H_Mirror(order_input, order_output, axis2)
+m2 = H_Mirror(order_input, order_output, axis3)
+m3 = H_Mirror(order_input, order_output, axis4)
+
+# Compute the reduced tensor (without Kleinman)
+Calculation_Chi(order_input, order_output, r1, m1, m2, m3, Kleinman_Symmetry=False)
+```
+
+
