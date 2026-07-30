@@ -56,3 +56,7 @@ All outputs are Latex format.
 2. The solution for each independent component, expressed in terms of free variables.
 
 3. Operation matrix for each symmetric.
+
+# Notice!
+
+This program does not consider the permutation symmetry ($\chi_{ijk}=\chi_{ikj}$). If needed, the user can apply it after obtaining the results from this package.
