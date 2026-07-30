@@ -11,3 +11,12 @@ Build symmetry transformation matrices for:
 3. Mirror reflection across a plane with arbitrary normal.
 
 Handle arbitrary input order (e.g., second‑order, third‑order) and output order (first‑order, second‑order, etc.). Automatically construct the susceptibility matrix with symbolic components. Impose symmetry constraints by requiring $\chi = H_{out} · \chi · H_{in}^T$ for each symmetry operation. Solve the resulting linear system and display the simplified tensor. Optionally enforce Kleinman symmetry, which makes the tensor fully symmetric under permutation of all indices.
+
+##Dependencies
+1. Python 3.x
+
+2. sympy (tested with version 1.10+)
+
+3. itertools (standard library)
+
+Install sympy via pip if needed: **pip install sympy**
