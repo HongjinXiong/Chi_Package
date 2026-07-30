@@ -28,6 +28,8 @@ Install sympy via pip if needed: **pip install sympy**
 For a 3m crystal, the symmetry elements are a 3‑fold rotation about z and three mirror planes. The code below computes the reduced $\chi$ tensor for second‑order input (order_input=2) and first‑order output (order_output=1).
 
 ```
+order_input=2
+order_output=1
 # C3 rotation axis z, angle 2π/3
 axis1 = sp.Matrix([0, 0, 1])
 theta1 = 2 * sp.pi / 3
@@ -46,4 +48,11 @@ m3 = H_Mirror(order_input, order_output, axis4)
 Calculation_Chi(order_input, order_output, r1, m1, m2, m3, Kleinman_Symmetry=False)
 ```
 
+## Output
+All output is \Latex format.
 
+1. The reduced susceptibility matrix with free parameters.
+
+2. The solution for each independent component, expressed in terms of free variables.
+
+3. Operation matrix for each symmetric.
