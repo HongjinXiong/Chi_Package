@@ -49,7 +49,7 @@ Calculation_Chi(order_input, order_output, r1, m1, m2, m3, Kleinman_Symmetry=Fal
 ```
 
 ## Output
-All output is $\Latex$ format.
+All outputs are Latex format.
 
 1. The reduced susceptibility matrix with free parameters.
 
